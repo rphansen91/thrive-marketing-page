@@ -5,7 +5,6 @@ import { useTranslation } from 'next-i18next';
 
 import { CtfNavigationGql } from '@src/components/features/ctf-components/ctf-navigation/ctf-navigation-gql';
 import { Link } from '@src/components/shared/link';
-import Logo from '@src/icons/color.png';
 import { HEADER_HEIGHT, HEADER_HEIGHT_MD, CONTAINER_WIDTH } from '@src/theme';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -84,9 +83,10 @@ export const Header = (props: HeaderPropsInterface) => {
           maxWidth={false}
           style={{
             maxWidth: `${CONTAINER_WIDTH / 10}rem`,
-          }}>
+          }}
+        >
           <Link href="/" withoutMaterial title={t('common.homepage')}>
-            <Logo className={classes.corporateLogo} />
+            <img src="/logo.png" alt="Logo" className={classes.corporateLogo} />
           </Link>
           <Box display={{ xs: 'none', md: 'block' }}>
             <div className={classes.menuWrapper}>
@@ -102,7 +102,8 @@ export const Header = (props: HeaderPropsInterface) => {
             onClick={() => onMenuClick?.()}
             aria-controls="mobile-menu"
             aria-expanded={isMenuOpen}
-            aria-haspopup="dialog">
+            aria-haspopup="dialog"
+          >
             <Menu />
           </IconButton>
         </Box>
