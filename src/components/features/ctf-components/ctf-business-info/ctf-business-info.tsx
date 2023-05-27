@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   heroBg: {
     backgroundColor: '#000',
-    backgroundPosition: 'center center',
+    backgroundPosition: 'center 30%',
     backgroundSize: 'cover',
     bottom: 0,
     left: 0,
