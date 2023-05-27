@@ -378,7 +378,7 @@ export const CtfProductTable = (props: ProductTableFieldsFragment) => {
                           </LayoutContext.Provider>
                         )}
                       </div>
-                      <div
+                      {/* <div
                         data-equal-size="3"
                         style={{
                           height:
@@ -398,10 +398,10 @@ export const CtfProductTable = (props: ProductTableFieldsFragment) => {
                         ) : (
                           <Typography variant="h2" component="span" className={classes.priceUpper}>
                             <FormatCurrency value={product.price} />
-                            <span className={classes.priceAddition}>/{t('time.month')}</span>
+                            <span className={classes.priceAddition}>/{t('time.hour')}</span>
                           </Typography>
                         )}
-                      </div>
+                      </div> */}
                       {featureNames && featuresGrid && (
                         <LayoutContext.Provider
                           value={{
@@ -460,8 +460,8 @@ export const CtfProductTable = (props: ProductTableFieldsFragment) => {
                               fieldId: 'price',
                             })}
                           >
-                            <FormatCurrency value={product.price} />
-                            <span className={classes.priceAddition}>/{t('time.month')}</span>
+                            <FormatCurrency value={product.price} currency="USD" />
+                            <span className={classes.priceAddition}>/ 2 Hours</span>
                           </Typography>
                         )}
                       </div>
