@@ -116,8 +116,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   corporateLogoMenu: {
+    display: 'flex',
+    justifyContent: 'center',
     [theme.breakpoints.up('md')]: {
-      display: 'flex',
       flexWrap: 'wrap',
     },
   },
@@ -127,7 +128,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: '0.2rem',
     [theme.breakpoints.up('md')]: {
       flexShrink: 0,
-      width: '38.4rem',
     },
   },
   corporateLogo: {
@@ -136,15 +136,18 @@ const useStyles = makeStyles((theme: Theme) => ({
     maxWidth: '100%',
   },
   copyrightAndLegal: {
-    [theme.breakpoints.up('md')]: {
-      alignItems: 'flex-start',
-      display: 'flex',
-    },
+    alignItems: 'center',
+    justifyContent: 'center',
+    display: 'flex',
   },
   copyright: {
     fontSize: '1.8rem',
     lineHeight: 1.2,
     margin: theme.spacing(1, 10, 0, 0),
+
+    '& a': {
+      color: '#ffffff',
+    },
   },
   legalMenuWrapper: {},
   legalMenu: {
@@ -185,17 +188,25 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   socialDisclaimer: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginBottom: theme.spacing(6),
     [theme.breakpoints.up('md')]: {
-      display: 'flex',
       marginTop: theme.spacing(7),
     },
   },
   socialWrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    flex: 1,
     [theme.breakpoints.up('md')]: {
       flexShrink: 0,
       order: -1,
       marginRight: theme.spacing(8),
-      width: '38.4rem',
+    },
+    '& a': {
+      color: '#ffffff',
     },
   },
   socialTitle: {
@@ -206,7 +217,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   social: {
     display: 'flex',
     flexWrap: 'wrap',
-    marginTop: theme.spacing(6),
+    marginTop: theme.spacing(2),
     '& a': {
       color: 'inherit',
       display: 'inline-block',
@@ -313,25 +324,13 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
                 height={63}
               />
             </div>
-
-            <section className={classes.copyrightAndLegal}>
-              <p className={classes.copyright}>
-                {t('legal.copyright', { year: new Date().getFullYear() })}
-              </p>
-              {footerContent?.legalLinks?.featuredPagesCollection?.items?.length && (
-                <nav role="navigation" className={classes.legalMenuWrapper}>
-                  <ul className={classes.legalMenu}>
-                    {renderMenuGroupLinks(
-                      footerContent.legalLinks.featuredPagesCollection,
-                      classes.legalMenuItem,
-                    )}
-                  </ul>
-                </nav>
-              )}
-            </section>
           </div>
 
           <div className={classes.socialDisclaimer}>
+            <div className={classes.socialWrapper}>
+              <Typography className={classes.socialTitle}>{t('socials.contactUs')}</Typography>
+              <a href="tel:321-236-6012">321.236.6012</a>
+            </div>
             <div className={classes.socialWrapper}>
               <Typography className={classes.socialTitle}>{t('socials.findUsOn')}</Typography>
               <div className={classes.social}>
@@ -378,6 +377,22 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className={classes.copyrightAndLegal}>
+          <p className={classes.copyright}>
+            {t('legal.copyright', { year: new Date().getFullYear() })}
+          </p>
+          {footerContent?.legalLinks?.featuredPagesCollection?.items?.length && (
+            <nav role="navigation" className={classes.legalMenuWrapper}>
+              <ul className={classes.legalMenu}>
+                {renderMenuGroupLinks(
+                  footerContent.legalLinks.featuredPagesCollection,
+                  classes.legalMenuItem,
+                )}
+              </ul>
+            </nav>
+          )}
         </section>
       </Container>
     </>

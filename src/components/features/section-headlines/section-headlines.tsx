@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     textAlign: 'center',
   },
   headline: {
-    fontSize: '2.25rem',
+    fontSize: '3rem',
     fontWeight: 600,
     lineHeight: 1.083,
   },
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 400,
     lineHeight: 1.56,
     marginTop: theme.spacing(6),
-    fontSize: '1.8rem',
+    fontSize: '2.5rem',
     color: '#414D63',
   },
 

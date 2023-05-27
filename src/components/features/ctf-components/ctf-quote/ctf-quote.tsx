@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 
     '& p': {
-      fontSize: '1.563rem',
+      fontSize: '2rem',
       fontWeight: 400,
     },
 
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         paddingRight: 0,
       },
       '& p': {
-        fontSize: '2.8rem',
+        fontSize: '2rem',
         fontWeight: 300,
         lineHeight: 1.314,
         color: '#414D63',
