@@ -88,6 +88,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     maxWidth: '46.9rem',
     '& p': {
       fontSize: '2.5rem',
+      color: '#ffffff',
       [theme.breakpoints.up('xl')]: {
         fontSize: '2.5rem',
       },
