@@ -461,7 +461,7 @@ export const CtfProductTable = (props: ProductTableFieldsFragment) => {
                             })}
                           >
                             <FormatCurrency value={product.price} currency="USD" />
-                            <span className={classes.priceAddition}>/ 2 Hours</span>
+                            <span className={classes.priceAddition}>/ {product.time}</span>
                           </Typography>
                         )}
                       </div>
