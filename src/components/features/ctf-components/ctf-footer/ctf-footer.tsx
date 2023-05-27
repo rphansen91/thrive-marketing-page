@@ -5,6 +5,7 @@ import LinkedIn from '@mui/icons-material/LinkedIn';
 import Twitter from '@mui/icons-material/Twitter';
 import { Theme, Container, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 
 import { FooterFieldsFragment } from './__generated/ctf-footer.generated';
@@ -16,7 +17,6 @@ import {
 import { LanguageSelector } from '@src/components/features/language-selector';
 import { Link } from '@src/components/shared/link';
 import { useContentfulContext } from '@src/contentful-context';
-import Logo from '@src/icons/logo-tagline.svg';
 import { CONTAINER_WIDTH } from '@src/theme';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -262,8 +262,8 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
   return (
     <>
       <Container {...containerProps} maxWidth={false} className={classes.footerContainer}>
-        <footer className={classes.footer}>
-          {footerContent?.menuItemsCollection?.items?.length && (
+        {footerContent?.menuItemsCollection?.items?.length ? (
+          <footer className={classes.footer}>
             <nav role="navigation" className={classes.menuWrapper}>
               {footerContent.menuItemsCollection.items.map(
                 menuItem =>
@@ -295,17 +295,23 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
                   ),
               )}
             </nav>
-          )}
-          <section className={classes.footerEndSection}>
+          </footer>
+        ) : null}
+        {/* <section className={classes.footerEndSection}>
             <LanguageSelector />
-          </section>
-        </footer>
+          </section> */}
       </Container>
       <Container maxWidth={false} className={classes.footerCorporateContainer}>
         <section className={classes.footerCorporate}>
           <div className={classes.corporateLogoMenu}>
             <div className={classes.corporateLogoContainer}>
-              <Logo className={classes.corporateLogo} />
+              <Image
+                src="/logo.png"
+                alt="logo"
+                className={classes.corporateLogo}
+                width={200}
+                height={63}
+              />
             </div>
 
             <section className={classes.copyrightAndLegal}>

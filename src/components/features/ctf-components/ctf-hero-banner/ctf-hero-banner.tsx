@@ -68,10 +68,14 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 
   headline: {
-    fontSize: '3rem',
+    fontSize: '2.4rem',
     fontWeight: 800,
     lineHeight: 1.08,
-    maxWidth: '44rem',
+    display: 'inline-block',
+    backgroundColor: '#ab1220',
+    whiteSpace: 'nowrap',
+    padding: '1rem 2rem',
+    borderRadius: '3rem',
     [theme.breakpoints.up('xl')]: {
       fontSize: '3.8rem',
     },
@@ -91,6 +95,27 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   ctaContainer: {
     marginTop: theme.spacing(6),
+  },
+  circusButton: {
+    fontFamily: "'The Circus Font', sans-serif",
+    backgroundColor: '#000000',
+    '--mask': 'radial-gradient(20px at 20px 20px,#0000 98%,#000) -20px -20px',
+    '-webkit-mask': 'var(--mask)',
+    mask: 'var(--mask)',
+    padding: '1rem 4rem',
+
+    color: '#ffffff',
+
+    fontSize: '2.5rem',
+    letterSpacing: '0.05rem',
+    [theme.breakpoints.up('xl')]: {
+      letterSpacing: '0.5rem',
+      fontSize: '3rem',
+    },
+
+    '&:hover': {
+      backgroundColor: '#000000',
+    },
   },
 }));
 
@@ -163,6 +188,19 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
             {headline}
           </Typography>
         )}
+        {targetPage && ctaText && (
+          <div className={classes.ctaContainer}>
+            <PageLink
+              page={targetPage}
+              variant="contained"
+              color={colorConfig.buttonColor}
+              className={classes.circusButton}
+              isButton
+            >
+              {ctaText}
+            </PageLink>
+          </div>
+        )}
         {bodyText && (
           <LayoutContext.Provider value={{ ...defaultLayout, parent: 'hero-banner-body' }}>
             <div
@@ -172,18 +210,6 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
               <CtfRichtext {...bodyText} className={classes.body} />
             </div>
           </LayoutContext.Provider>
-        )}
-        {targetPage && ctaText && (
-          <div className={classes.ctaContainer}>
-            <PageLink
-              page={targetPage}
-              variant="contained"
-              color={colorConfig.buttonColor}
-              isButton
-            >
-              {ctaText}
-            </PageLink>
-          </div>
         )}
       </div>
     </Container>

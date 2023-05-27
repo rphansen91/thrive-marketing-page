@@ -69,7 +69,7 @@ export const getColorConfigFromPalette = (palette: string): ColorConfigInterface
 const colorfulTheme = createTheme({
   spacing: SPACER,
   typography: {
-    fontFamily: `'Red Hat Display', sans-serif`,
+    fontFamily: `'Avenir', sans-serif`,
     htmlFontSize: 10,
     caption: {
       fontSize: '1.5rem',
@@ -195,23 +195,36 @@ const colorfulTheme = createTheme({
       },
     },
     MuiCssBaseline: {
-      styleOverrides: {
-        html: {
-          fontSize: '10px',
-          minHeight: '100%',
-        },
-        body: {
-          minHeight: '100%',
-          '.is-scroll-locked': {
-            overflow: 'hidden',
-          },
-          '#__next': {
-            display: 'flex',
-            flexDirection: 'column',
-          }
-        },
-      }
-    }
+      styleOverrides: `
+        html {
+          font-size: 10px;
+          min-height: 100%;
+        }
+
+        body {
+          min-height: 100%;
+        }
+
+        .is-scroll-locked {
+          overflow: hidden;
+        }
+        
+        #__next {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        @font-face {
+          font-family: 'The Circus Font';
+          src: url('/fonts/TheCircusFont.ttf');
+        }
+
+        @font-face {
+          font-family: 'Avenir';
+          src: url('/fonts/Avenir.ttf');
+        }
+      `,
+    },
   },
 });
 

@@ -1,6 +1,7 @@
 import Menu from '@mui/icons-material/Menu';
 import { AppBar, Container, IconButton, Theme, Toolbar, Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 
 import { CtfNavigationGql } from '@src/components/features/ctf-components/ctf-navigation/ctf-navigation-gql';
@@ -86,7 +87,13 @@ export const Header = (props: HeaderPropsInterface) => {
           }}
         >
           <Link href="/" withoutMaterial title={t('common.homepage')}>
-            <img src="/logo.png" alt="Logo" className={classes.corporateLogo} />
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              className={classes.corporateLogo}
+              width={200}
+              height={63}
+            />
           </Link>
           <Box display={{ xs: 'none', md: 'block' }}>
             <div className={classes.menuWrapper}>
