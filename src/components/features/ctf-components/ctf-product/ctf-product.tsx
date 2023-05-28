@@ -1,6 +1,7 @@
 import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 import { Theme, Container, Typography, Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import Script from 'next/script';
 import { Fragment } from 'react';
 
 import { ProductFieldsFragment } from './__generated/ctf-product.generated';
@@ -136,6 +137,7 @@ export const CtfProduct = (props: ProductFieldsFragment) => {
     featuredImage,
     description,
     featuresCollection,
+    calendly,
     sys: { id },
   } = props;
 
@@ -228,6 +230,21 @@ export const CtfProduct = (props: ProductFieldsFragment) => {
           </section>
         </LayoutContext.Provider>
       )}
+
+      {calendly ? (
+        <>
+          <div
+            className="calendly-inline-widget"
+            data-url={`https://calendly.com/${calendly}`}
+            style={{ minWidth: 320, height: 700 }}
+          />
+          <Script
+            type="text/javascript"
+            src="https://assets.calendly.com/assets/external/widget.js"
+            async
+          />
+        </>
+      ) : null}
     </>
   );
 };
