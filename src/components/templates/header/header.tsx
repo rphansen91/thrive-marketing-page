@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   toolbarContent: {
     alignItems: 'center',
-    display: 'flex',
+    display: 'flex!important',
     flexDirection: 'row',
     height: '100%',
     justifyContent: 'space-between',

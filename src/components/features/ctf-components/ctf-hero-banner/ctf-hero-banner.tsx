@@ -99,13 +99,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   circusButton: {
     fontFamily: "'The Circus Font', sans-serif",
-    backgroundColor: '#000000',
     '--mask': 'radial-gradient(20px at 20px 20px,#0000 98%,#000) -20px -20px',
     '-webkit-mask': 'var(--mask)',
+    backgroundColor: '#000000!important',
     mask: 'var(--mask)',
     padding: '1rem 4rem',
 
-    color: '#ffffff',
+    color: '#ffffff!important',
 
     fontSize: '2.5rem',
     letterSpacing: '0.05rem',
@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 
     '&:hover': {
-      backgroundColor: '#000000',
+      backgroundColor: '#000000!important',
     },
   },
 }));
