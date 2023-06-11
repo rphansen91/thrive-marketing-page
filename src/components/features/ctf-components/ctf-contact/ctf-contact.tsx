@@ -54,8 +54,33 @@ const ContactMe = () => {
 
 const ContactForm = () => {
   const classes = useStyles();
+
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+    console.log(formData);
+    // @ts-ignore
+    const body = new URLSearchParams(formData).toString();
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body,
+    })
+      .then(() => console.log('Form successfully submitted'))
+      .catch(error => alert(error));
+  };
+
   return (
-    <form name="contact" method="POST" data-netlify="true" className={classes.form}>
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      className={classes.form}
+      onSubmit={handleSubmit}
+    >
       <input type="hidden" name="form-name" value="contact" />
       <TextField name="name" label="Name" margin="normal" fullWidth />
       <TextField name="email" label="Email" margin="normal" fullWidth />
