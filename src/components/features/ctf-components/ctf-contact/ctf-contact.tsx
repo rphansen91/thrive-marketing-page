@@ -58,7 +58,14 @@ export const ContactForm = ({ hidden }: { hidden?: boolean }) => {
   const classes = useStyles();
 
   return (
-    <form name="contact" method="POST" data-netlify="true" className={classes.form} hidden={hidden}>
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      action="/thanks"
+      className={classes.form}
+      hidden={hidden}
+    >
       <input type="hidden" name="form-name" value="contact" />
       <TextField name="name" label="Name" margin="normal" fullWidth />
       <TextField name="email" label="Email" margin="normal" fullWidth />
