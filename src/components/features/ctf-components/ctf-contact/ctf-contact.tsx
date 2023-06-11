@@ -3,6 +3,7 @@ import { makeStyles } from '@mui/styles';
 import { useTranslation } from 'next-i18next';
 
 import { useLayoutContext } from '@src/layout-context';
+import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -56,6 +57,27 @@ const ContactMe = () => {
 
 export const ContactForm = ({ hidden }: { hidden?: boolean }) => {
   const classes = useStyles();
+  const router = useRouter();
+
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+    // @ts-ignore
+    const body = new URLSearchParams(formData).toString();
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body,
+    })
+      .then(() => {
+        console.log('Form successfully submitted');
+        router.push('/thanks');
+      })
+      .catch(error => alert(error));
+  };
 
   return (
     <form
@@ -64,6 +86,7 @@ export const ContactForm = ({ hidden }: { hidden?: boolean }) => {
       data-netlify="true"
       action="/thanks"
       className={classes.form}
+      onSubmit={handleSubmit}
       hidden={hidden}
     >
       <input type="hidden" name="form-name" value="contact" />
