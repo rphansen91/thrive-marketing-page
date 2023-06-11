@@ -90,7 +90,6 @@ const CustomApp = ({
                     <Component {...pageProps} err={err} />
                     <></>
                   </Layout>
-                  ya
                   <ContactForm hidden />
                   {/* <Settings /> */}
                 </Hydrate>
