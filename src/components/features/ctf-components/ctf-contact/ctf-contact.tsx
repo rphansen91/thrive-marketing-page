@@ -56,7 +56,7 @@ const ContactForm = () => {
   const classes = useStyles();
   return (
     <form name="contact" method="POST" data-netlify="true" className={classes.form}>
-      <input type="hidden" name="form-name" value="Contact form" />
+      <input type="hidden" name="form-name" value="contact" />
       <TextField name="name" label="Name" margin="normal" fullWidth />
       <TextField name="email" label="Email" margin="normal" fullWidth />
       <TextField name="message" label="Message" margin="normal" rows={3} multiline fullWidth />
