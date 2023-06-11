@@ -57,10 +57,28 @@ const ContactForm = () => {
   return (
     <form name="contact" method="POST" data-netlify="true" className={classes.form}>
       <input type="hidden" name="form-name" value="contact" />
-      <TextField name="name" label="Name" margin="normal" fullWidth />
+      {/* <TextField name="name" label="Name" margin="normal" fullWidth />
       <TextField name="email" label="Email" margin="normal" fullWidth />
       <TextField name="message" label="Message" margin="normal" rows={3} multiline fullWidth />
-      <Button type="submit">Send</Button>
+      <Button type="submit">Send</Button> */}
+      <p>
+        <label>
+          Name <input type="text" name="name" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Email <input type="email" name="email" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Message <textarea name="message" />
+        </label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
     </form>
   );
 };
