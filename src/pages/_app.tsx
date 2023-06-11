@@ -8,6 +8,7 @@ import { appWithTranslation, SSRConfig } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import '@contentful/live-preview/style.css';
 
+import { ContactForm } from '@src/components/features/ctf-components/ctf-contact/ctf-contact';
 import { Settings } from '@src/components/features/settings';
 import { Layout } from '@src/components/templates/layout/layout';
 import { useContentfulContext, ContentfulContentProvider } from '@src/contentful-context';
@@ -89,6 +90,8 @@ const CustomApp = ({
                     <Component {...pageProps} err={err} />
                     <></>
                   </Layout>
+                  ya
+                  <ContactForm hidden />
                   {/* <Settings /> */}
                 </Hydrate>
               </ThemeProvider>

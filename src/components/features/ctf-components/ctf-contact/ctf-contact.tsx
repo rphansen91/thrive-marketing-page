@@ -54,7 +54,7 @@ const ContactMe = () => {
   );
 };
 
-const ContactForm = () => {
+export const ContactForm = ({ hidden }: { hidden?: boolean }) => {
   const classes = useStyles();
 
   const handleSubmit = event => {
@@ -62,9 +62,9 @@ const ContactForm = () => {
 
     const myForm = event.target;
     const formData = new FormData(myForm);
-    console.log(formData);
     // @ts-ignore
     const body = new URLSearchParams(formData).toString();
+    console.log(formData, body);
 
     fetch('/', {
       method: 'POST',
@@ -82,6 +82,7 @@ const ContactForm = () => {
       data-netlify="true"
       className={classes.form}
       onSubmit={handleSubmit}
+      hidden={hidden}
     >
       <input type="hidden" name="form-name" value="contact" />
       <TextField name="name" label="Name" margin="normal" fullWidth />
