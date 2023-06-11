@@ -1,5 +1,6 @@
 import { Theme, Container, TextField, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import { useTranslation } from 'next-i18next';
 
 import { useLayoutContext } from '@src/layout-context';
 
@@ -41,10 +42,11 @@ export const CtfContact = () => {
 
 const ContactMe = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
     <div className={classes.me}>
-      <h2>Contact me.</h2>
+      <h2>{t('socials.contactUs')}</h2>
       <p>
         <a href="tel:321-236-6012">321.236.6012</a>
       </p>
