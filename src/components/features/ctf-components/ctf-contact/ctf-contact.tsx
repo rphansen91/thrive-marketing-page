@@ -67,7 +67,7 @@ export const ContactForm = ({ hidden }: { hidden?: boolean }) => {
     // @ts-ignore
     const body = new URLSearchParams(formData).toString();
 
-    fetch('/', {
+    fetch('/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: body,
