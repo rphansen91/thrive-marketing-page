@@ -192,7 +192,8 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
         {targetPage && ctaText && (
           <div className={classes.ctaContainer}>
             <PageLink
-              page={targetPage}
+              // page={targetPage}
+              link="https://www.vagaro.com//Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVIUuk+qnB4i3KVcNfOeAoBmp36hhhjkR8hFZZHmA5q4Ocyhav6NcoOwc5xJLBguKR/Zg9BcLj8gZQA6QIt0m4zrfwk2bcm+qQGcHFfUN/He3SahNdFrhKGNUmeFXy09R82rbauZ118YCyvjQy8MDmXTPeD0VNan2bwxJohoiSpga1HnNOZdGb37Gk8KppSzsdttwpdCyRfOBAEkN5gxphCJ0o1GZxvd/kr+Z25U1P67luYVn20k/3YmlDV44MYSEe7uwlA/ytOl9MgHxJ0oxZIMj/IsmmYORpjrzoT8ZrdjMQtwK72S2WRITV3/e2UIr5VVBPQJ3lRxztrP2b9P7Mq9E0s7TQxllaNh2nHWlFwOcdwoC0g1pVEKIf1GrJJR3FW/ZJb7ho9S6dmvhl6IviT4="
               variant="contained"
               color={colorConfig.buttonColor}
               className={classes.circusButton}
