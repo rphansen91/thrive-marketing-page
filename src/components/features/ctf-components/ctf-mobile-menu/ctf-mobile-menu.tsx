@@ -93,6 +93,9 @@ export const CtfMobileMenu = (props: MobileMenuPropsInterface) => {
                   </li>
                 ),
             )}
+            <li className={classes.menuItem}>
+              <Link href="/#book-now">Book Now</Link>
+            </li>
           </ul>
         </nav>
       )}
