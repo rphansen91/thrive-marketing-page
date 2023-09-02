@@ -125,6 +125,9 @@ export const CtfNavigation = (props: NavigationFieldsFragment) => {
                   </li>
                 ),
             )}
+            <li className={classes.menuItem}>
+              <Link href="/#book-now">Book Now</Link>
+            </li>
           </ul>
         </nav>
       )}
