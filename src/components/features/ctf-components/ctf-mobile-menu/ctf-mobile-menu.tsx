@@ -94,7 +94,9 @@ export const CtfMobileMenu = (props: MobileMenuPropsInterface) => {
                 ),
             )}
             <li className={classes.menuItem}>
-              <Link href="/#book-now">Book Now</Link>
+              <Link href="/#book-now" onClick={() => onOpenChange(false)}>
+                Book Now
+              </Link>
             </li>
           </ul>
         </nav>
