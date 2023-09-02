@@ -197,7 +197,7 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
               variant="contained"
               color={colorConfig.buttonColor}
               className={classes.circusButton}
-              isButton
+              // isButton
             >
               {ctaText}
             </PageLink>
